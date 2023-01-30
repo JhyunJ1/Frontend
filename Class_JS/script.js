@@ -75,3 +75,29 @@ if (age > 18) {
 
 // 삼항연산자
 age > 18 ? alert('성인') : age > 10 ? alert('청소년') : alert('미성년자');
+
+// 타입 변환
+age = '1';
+numAge = Number(age);
+strAge = String(age);
+
+// 타입 확인
+age = prompt('나이를 입력해주세요', '')
+alert(typeof age)
+
+// switch 문
+let device = 'Desktop';
+
+switch(device) {
+    case "Desktop":
+        alert('데스크탑 입니다');
+        break
+    case "Tablet":
+        alert('태블릿 입니다');
+        break
+    case "Mobile":
+        alert('모바일 입니다');
+        break
+    default:
+        alert('알 수 없습니다.');
+}
