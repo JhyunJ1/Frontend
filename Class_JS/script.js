@@ -101,3 +101,15 @@ switch(device) {
     default:
         alert('알 수 없습니다.');
 }
+
+// 반복문
+let i = 0;
+
+while (i < 3) {
+    alert(i);
+    i++;
+}
+
+for (i = 0; i < 3; i++) {
+    alert(i);
+}
