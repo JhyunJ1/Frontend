@@ -4,9 +4,9 @@ let scores = {
     Park: 70,
     Lee: 80
 };
-sum = 0
-for(let key in scores.key) {
-    sum += scores.key;
+let sum = 0;
+for(let key in scores) {
+    sum += scores[key];
 }
 console.log(sum);
 
@@ -20,3 +20,5 @@ let player = {
         this.mp -= 10;
     }
 };
+player.heal()
+console.log(Object.entries(player))

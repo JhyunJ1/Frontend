@@ -112,3 +112,64 @@ function User(name, age) { // 생성자 함수 *** (첫번째 글자 대문자)
 let user_new1 = new User('Kim', 20);
 let user_new2 = new User('Jang', 30);
 console.log(user_new1, user_new2);
+user_new1.sayHi();
+
+console.log('---------------------------------------------------------------------------------------------')
+
+let user_get = {
+    name: 'kim',
+    age: 20,
+    get info() { // .info로 접근하면 바로 실행
+        return `${this.name}`;
+    }
+}
+console.log(user_get.info);
+
+
+console.log('---------------------------------------------------------------------------------------------')
+// 배열
+let fruits = ['사과', '바나나', '배'];
+console.log(fruits[0]);
+// fruits[0] = '복숭아';
+// let fruit = fruits.pop();
+// let fruit = fruits.push('복숭아')
+//console.log(fruit); // 배
+console.log(fruits); // ['사과', '바나나']
+
+for (let fruit of fruits) { // 객체는 in, 리스트는 of
+    console.log(fruit);
+}
+
+fruits.forEach(fruit => {
+    console.log(fruit)
+})
+
+
+// 반복
+fruits.forEach((fruit, index) => {
+    console.log(`${fruit}는 ${index} 번째 요소입니다.`)
+})
+
+
+// 중요 메서드
+
+let users = [
+    {id: 1, name: 'Kim'},
+    {id: 2, name: 'Jang'},
+    {id: 3, name: 'Hyunji'},
+]
+
+// find는 가장 처음 찾은 첫번째 요소만 리턴
+let result = users.find(element => element.name === 'Kim');
+console.log(result);
+
+// map 함수
+result = users.map(element => {
+    return {id: element.id, name: element.name, age: 20};
+});
+console.log(result);
+
+// reduce 함수
+let arr = [1, 2, 3, 4, 5];
+result = arr.reduce((sum, cur) => sum + cur, 0) // sum : 전 반복에서 리턴한 결과 | cur : 현재 값 | 0 : sum의 처음(초기)값
+console.log(result)
