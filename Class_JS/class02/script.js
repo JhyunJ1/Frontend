@@ -80,3 +80,35 @@ user2 = Object.assign({}, user1);
 user1.name = 'Kim';
 console.log(user2.name);
 
+// 객체에 함수 할당하기
+let user3 = {
+    name: 'Kim',                // 프로퍼티
+    age: 20,                    // 프로퍼티
+    sayHi: function() {         // 메서드
+        // console.log(`나는 ${this.name} 이야`);
+        let showMsg = () => alert(`${this.name}`); // 이렇게 하면 화살표 함수를 써도 this로 접근 가능
+    }
+}
+
+function sayHello() {
+    console.log(`say hello`);
+}
+user3.sayHello = sayHello;
+
+user3.sayHi(); // this는 . 앞에 있는 객체를 의미한다.
+// 화살표 함수 사용 시 외부 context (전역 객체)에서 받아오는 거기 때문에 this로 프로퍼티를 접근할 수 없다.
+
+
+
+console.log('---------------------------------------------------------------------------------------------')
+//let user = new Object(); // Object 자바 스크립트 내장 생성자
+function User(name, age) { // 생성자 함수 *** (첫번째 글자 대문자)
+    this.name = name;
+    this.age = age;
+    this.sayHi = function() {
+        console.log(`저는 ${this.name}입니다.`);
+    }
+}
+let user_new1 = new User('Kim', 20);
+let user_new2 = new User('Jang', 30);
+console.log(user_new1, user_new2);
