@@ -5,22 +5,16 @@ function t1() {
     // 가위 0 바위 1 보 2
 
     user = Number(prompt('가위~ 바위~ 보!'));
-    switch(user) {
-        case '가위': user = 0; break;
-        case '바위': user = 1; break;
-        case '보': user = 2; break;
-    }
-
-    com = Math.floor(Math.random() * 2);
+    com = Math.floor(Math.random() * 3);
 
 
-    if (user === 0) {
+    if (user === '가위') {
         switch(com) {
             case 0: alert('비김!'); break;
             case 1: alert('짐!'); break;
             case 2: alert('이김!'); break;
         }
-    } else if (user === 1) {
+    } else if (user === '바위') {
         switch(com) {
             case 1: alert('비김!'); break;
             case 2: alert('짐!'); break;
@@ -36,7 +30,7 @@ function t1() {
 }
 
 function t2() {
-    answer = Math.floor(Math.random() * 99) + 1;
+    answer = Math.floor(Math.random() * 100) + 1;
 
     while(true) {
         user = prompt('choice!');
@@ -56,15 +50,15 @@ function t3() {
     while(true) {
         user = Number(prompt(`베스킨라빈스 31~ | 현재: ${num}`));
         num += user;
-        if (now == 30) {
-            alert('승리!')
+        if (now > 30) {
+            alert('패배!')
             break;
         }
 
-        com = Math.floor(Math.random()*2) + 1;
+        com = Math.floor(Math.random()*3) + 1;
         num += com;
-        if (now == 30) {
-            alert('패배!')
+        if (now > 30) {
+            alert('승리!')
             break;
         }
     }
