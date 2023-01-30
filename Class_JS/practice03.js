@@ -12,6 +12,7 @@ function addTen(num) {
         res += (num * i);
     }
     return res;
+    // return num * 55;
 }
 
 // 3번
