@@ -173,3 +173,8 @@ console.log(result);
 let arr = [1, 2, 3, 4, 5];
 result = arr.reduce((sum, cur) => sum + cur, 0) // sum : 전 반복에서 리턴한 결과 | cur : 현재 값 | 0 : sum의 처음(초기)값
 console.log(result)
+
+// 정렬
+let arr2 = [2, 1, 4, 5, 3];
+arr2.sort();
+console.log(arr);
