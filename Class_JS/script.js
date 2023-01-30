@@ -110,6 +110,19 @@ while (i < 3) {
     i++;
 }
 
-for (i = 0; i < 3; i++) {
+for (i = 0; i < 10; i++) {
+    if (i === 2) break; // continue;
     alert(i);
 }
+
+// 함수
+function showMsg(msg) {
+    alert(msg);
+}
+// console에서 - showMsg(msg);
+
+function sum(a, b) {
+    return a + b;
+}
+
+let reuslt = sum(3, 4) // 7 할당
