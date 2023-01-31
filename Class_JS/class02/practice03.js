@@ -24,12 +24,8 @@ let students_2 = [
     {id: 3, name: 'Lee', score: {math: 70, english: 50}},
 ];
 res = students_2.map(student => {
-    return {
-        id: student.id, 
-        name: student.name, 
-        score: student.score, 
-        sum: student.score.math + student.score.english
-    };
+    student['sum'] = student.score.math + student.score.english;
+    return student;
 })
 console.log(res)
 

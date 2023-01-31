@@ -176,5 +176,44 @@ console.log(result)
 
 // 정렬
 let arr2 = [2, 1, 4, 5, 3];
-arr2.sort();
+arr2.sort(); // 정렬할 때 문자열로 취급하여 정렬 (10, 2 면 10 2 순서로 정렬)
+arr2.sort((a,b) => a - b); // 숫자로 정렬 -> 숫자가 더 큰 걸 뒤로 정렬하라는 의미의 명령어
 console.log(arr);
+
+// destructure
+
+user = {
+    name: 'kim',
+    age: 20
+};
+let {name1, age1} = user;
+// let name1 = user.name;
+// let age1 = user.age;
+
+// spread
+user = {
+	name: 'Kim',
+	age: 20
+};
+
+// let busanUser = {
+// 	name: 'Kim',
+// 	age: 20,
+// 	city: 'Busan'
+// };
+
+let busanUser = {
+    ...user,
+    city: 'Busan'
+}
+
+// let seoulUser = {
+// 	name: 'Kim',
+// 	age: 20,
+// 	city: 'Seoul'
+// };
+
+let seoulUser = {
+    ...user,
+    city: 'Seoul'
+}
