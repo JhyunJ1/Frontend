@@ -7,15 +7,11 @@ async function getPost(id) {
     return data;
 }
 
-async function putPost(id) {
-    let post = {
-        title: document.getElementById('title').value,
-        body: document.getElementById('body').value,
-    }   
+async function putPost(post, id) {
     let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
         method: 'PUT',
-        body: JSON.stringify(post),
-        headers: {
+        body: JSON.stringify(post), // json 형태로 데이터 변환
+        headers: { // 백엔드한테 어떤 타입의 데이터인지 header로 보냄
             'Content-type': 'application/json',
         },
     });
@@ -33,6 +29,10 @@ async function insertPost() {
 insertPost();
 
 
-function complete() {
-    putPost(1);
+async function complete() {
+    let post = {
+        title: document.getElementById('title').value,
+        body: document.getElementById('body').value,
+    } 
+    putPost(post, 1);
 }
