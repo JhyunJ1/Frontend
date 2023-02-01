@@ -25,6 +25,7 @@ async function putPost(id) {
 
 async function insertPost() {
     let post = await getPost(1);
+    
     title.value = post.title;
     body.value = post.body;
 }
