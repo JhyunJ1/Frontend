@@ -82,7 +82,7 @@ async function get_modifyArticle(id) {
 
 }
 
-async function modifyArticle(article, id) {
+async function modifyArticle(article, id) { // 밑 함수에서 updatePost() 역할
     let response = await fetch(`${SERVER_URL}/blog/article/${id}`, {
         method: 'PUT',
         body: JSON.stringify(article),
@@ -93,6 +93,19 @@ async function modifyArticle(article, id) {
     let data = await response.json()
     return data;
 }
+
+
+/* 수정 버튼을 눌렀을 때 발생하는 이벤트 그럼 수정은 지금 함수랑 위 함수만 사용하면 됌
+async function submitPost(event) {
+    let id = event.target.previousElementSibling.id;
+    let post = {
+        title: document.getElementById('title').value,
+        content: document.getElementById('content').value,
+    }
+    let result = await updatePost(post, id);
+    console.log(result);
+}
+*/
 
 async function modify() {
     let title = document.getElementById('title');
