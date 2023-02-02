@@ -45,11 +45,12 @@ async function insertArticlelist() {
     let articles = await getArticlelist();
     articles.forEach(article => {
         document.body.insertAdjacentHTML('afterBegin',`
-        <div id='article'>
+        <div id='${article.id}'>
             <h1 id='title'>${article.title}</h1>
             <p id='content'>${article.content}</p>
+            <button onclick="deleteArticle(${article.id})">Delete</button>
         </div>
-        <button onclick="deleteArticle(${article.id})">Delete</button>
+        
     `);
     })
 }
@@ -60,7 +61,12 @@ async function deleteArticle(id) {
         method: 'DELETE',
 
     });
-    location.reload();
+
+    if (response.status === 204) { // 예외처리
+        let article = document.getElementById(id);
+        article.remove(); // 왜 나는 바로 안지워지지??
+    }
+    
 }
 
 async function get_modifyArticle(id) {
